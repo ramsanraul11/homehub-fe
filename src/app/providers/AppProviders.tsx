@@ -1,6 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { PropsWithChildren } from "react";
+import { AppSnackbar } from "../../shared/ui/AppSnackbar";
 import { theme } from "../theme/theme";
 import { AuthBootstrap } from "./AuthBootstrap";
 
@@ -15,7 +16,10 @@ export function AppProviders({ children }: PropsWithChildren) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <AuthBootstrap>{children}</AuthBootstrap>
+        <AuthBootstrap>
+          {children}
+          <AppSnackbar />
+        </AuthBootstrap>
       </ThemeProvider>
     </QueryClientProvider>
   );

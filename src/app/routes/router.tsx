@@ -4,6 +4,8 @@ import { AppLayout } from "../layout/AppLayout/AppLayout";
 import { AuthGuard } from "./guards";
 
 import { DashboardPage } from "../../modules/dashboard/pages/DashboardPage";
+import { AppEntryPage } from "../../modules/households/pages/AppEntryPage";
+import { NoHouseholdsPage } from "../../modules/households/pages/NoHouseholdsPage";
 import { InventoryPage } from "../../modules/inventory/pages/InventoryPage";
 import { MembersPage } from "../../modules/members/pages/MembersPage";
 import { NoticesPage } from "../../modules/notices/pages/NoticesPage";
@@ -19,7 +21,8 @@ export const router = createBrowserRouter([
         element: <AuthGuard />,
         children: [
             // En /app luego haremos redirección al primer household (cuando consumamos /households)
-            { path: "/app", element: <Navigate to="/app/placeholder/dashboard" replace /> },
+            { path: "/app", element: <AppEntryPage /> },
+            { path: "/app/no-households", element: <NoHouseholdsPage /> },
 
             {
                 path: "/app/:householdId",
