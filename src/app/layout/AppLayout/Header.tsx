@@ -1,7 +1,6 @@
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import LogoutIcon from "@mui/icons-material/Logout";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import SearchIcon from "@mui/icons-material/Search";
 import {
     AppBar,
     Avatar,
@@ -11,10 +10,9 @@ import {
     ListItemText,
     Menu,
     MenuItem,
-    TextField,
     Toolbar,
     useMediaQuery,
-    useTheme,
+    useTheme
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
