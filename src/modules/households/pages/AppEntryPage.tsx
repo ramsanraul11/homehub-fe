@@ -1,10 +1,10 @@
 import { Box, CircularProgress } from "@mui/material";
 import { Navigate } from "react-router-dom";
-import { useMyHouseholds } from "../hooks/useMyHouseholds";
+import { useHouseholds } from "../hooks/useHouseholds";
 import { useHouseholdStore } from "../store/householdStore";
 
 export function AppEntryPage() {
-    const { data, isLoading } = useMyHouseholds();
+    const { data, isLoading } = useHouseholds();
     const activeHouseholdId = useHouseholdStore((s) => s.activeHouseholdId);
     const setActive = useHouseholdStore((s) => s.setActiveHouseholdId);
 

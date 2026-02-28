@@ -6,7 +6,7 @@ export const householdKeys = {
     byId: (id: string) => ["households", id] as const,
 };
 
-export function useMyHouseholds() {
+export function useHouseholds() {
     return useQuery({
         queryKey: householdKeys.mine,
         queryFn: householdsApi.getMine,

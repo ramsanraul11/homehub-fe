@@ -1,11 +1,11 @@
 import { Box, MenuItem, Select, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useMyHouseholds } from "../../../modules/households/hooks/useMyHouseholds";
+import { useHouseholds } from "../../../modules/households/hooks/useHouseholds";
 import { useHouseholdStore } from "../../../modules/households/store/householdStore";
 
 export function HouseholdSwitcher() {
-    const { data } = useMyHouseholds();
+    const { data } = useHouseholds();
     const households = data ?? [];
     const { householdId } = useParams();
     const activeHouseholdId = useHouseholdStore((s) => s.activeHouseholdId);

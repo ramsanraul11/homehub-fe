@@ -4,8 +4,11 @@ export type HouseholdDto = {
   id: string;
   name: string;
   currencyCode?: string | null;
-  // muy probable que venga el rol por usuario:
-  role?: number; // 1 Owner, 2 Admin, 3 Member (según tu enum)
+};
+
+export type CreateHouseholdCommand = {
+  name: string;
+  currencyCode?: string | null;
 };
 
 export const householdsApi = {
@@ -14,8 +17,8 @@ export const householdsApi = {
     return data;
   },
 
-  getById: async (householdId: string) => {
-    const { data } = await httpClient.get<HouseholdDto>(`/households/${householdId}`);
+  create: async (cmd: CreateHouseholdCommand) => {
+    const { data } = await httpClient.post<HouseholdDto>("/households", cmd);
     return data;
   },
 };

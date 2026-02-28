@@ -11,6 +11,7 @@ import { MembersPage } from "../../modules/members/pages/MembersPage";
 import { NoticesPage } from "../../modules/notices/pages/NoticesPage";
 import { ShoppingPage } from "../../modules/shopping/pages/ShoppingPage";
 import { TasksPage } from "../../modules/tasks/pages/TasksPage";
+import { HouseholdsManagePage } from "../../modules/households/pages/HouseholdsManagePage";
 
 export const router = createBrowserRouter([
     { path: "/", element: <Navigate to="/app" replace /> },
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
             // En /app luego haremos redirección al primer household (cuando consumamos /households)
             { path: "/app", element: <AppEntryPage /> },
             { path: "/app/no-households", element: <NoHouseholdsPage /> },
-
+            { path: "/app/households", element: <HouseholdsManagePage /> },
             {
                 path: "/app/:householdId",
                 element: <AppLayout />,
